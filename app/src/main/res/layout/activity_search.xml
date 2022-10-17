@@ -6,4 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".SearchActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SearchActivity"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="93dp">
+
+        <EditText
+
+            android:id="@+id/et_Name"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+
+            android:text="請在此輸入"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.023" />
+
+        <Button
+            android:id="@+id/btn_Show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="送出"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.984"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.023" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
