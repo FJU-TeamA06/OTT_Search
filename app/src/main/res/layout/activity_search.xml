@@ -20,7 +20,11 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
 
-            android:hint="請在此輸入"
+            android:hint="@string/SearchBoxHintText"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColorHint="#757575"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.045"
@@ -32,7 +36,7 @@
             android:id="@+id/btn_Show"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="送出"
+            android:text="@string/ButtonSubmitText"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

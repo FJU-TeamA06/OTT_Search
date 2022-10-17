@@ -5,4 +5,6 @@
     <string name="ButtonHitText">熱門</string>
     <string name="ButtonMyListText">片單</string>
     <string name="ButtonHistoryText">紀錄</string>
+    <string name="ButtonSubmitText">送出</string>
+    <string name="SearchBoxHintText">請在此輸入</string>
 </resources>
