@@ -7,13 +7,13 @@ import android.view.View
 import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
-    lateinit var buttonSearch: Button
+    private lateinit var buttonSearch: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         buttonSearch = findViewById(R.id.buttonSearch)
     }
-    fun SwitchToSearch(view: View){
+    fun switchToSearch(view: View){
         val intent = Intent(this, SearchActivity::class.java )
         startActivity(intent)
     }
