@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">OTT Search</string>
+    <string name="ButtonSearchText">查詢</string>
+    <string name="TitleText">OTT影音查詢</string>
+    <string name="ButtonHitText">熱門</string>
+    <string name="ButtonMyListText">片單</string>
+    <string name="ButtonHistoryText">紀錄</string>
 </resources>
