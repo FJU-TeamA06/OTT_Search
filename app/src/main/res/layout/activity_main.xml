@@ -44,34 +44,40 @@
             android:id="@+id/buttonHit"
             android:layout_width="137dp"
             android:layout_height="49dp"
+            android:onClick="switchToHit"
             android:text="@string/ButtonHitText"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonSearch"
-            app:layout_constraintVertical_bias="0.10" />
+            app:layout_constraintVertical_bias="0.10"
+            tools:ignore="UsingOnClickInXml" />
 
         <Button
             android:id="@+id/buttonMyList"
             android:layout_width="137dp"
             android:layout_height="49dp"
+            android:onClick="switchToList"
             android:text="@string/ButtonMyListText"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonHit"
-            app:layout_constraintVertical_bias="0.13" />
+            app:layout_constraintVertical_bias="0.13"
+            tools:ignore="UsingOnClickInXml" />
 
         <Button
             android:id="@+id/buttonHistory"
             android:layout_width="137dp"
             android:layout_height="49dp"
+            android:onClick="switchToHistory"
             android:text="@string/ButtonHistoryText"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonMyList"
-            app:layout_constraintVertical_bias="0.18" />
+            app:layout_constraintVertical_bias="0.18"
+            tools:ignore="UsingOnClickInXml" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

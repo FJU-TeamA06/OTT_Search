@@ -12,9 +12,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         buttonSearch = findViewById(R.id.buttonSearch)
+        title = "OTT影音查詢"
     }
     fun switchToSearch(view: View){
         val intent = Intent(this, SearchActivity::class.java )
+        startActivity(intent)
+    }
+    fun switchToHit(view: View){
+        val intent = Intent(this, HitActivity::class.java )
+        startActivity(intent)
+    }
+    fun switchToHistory(view: View){
+        val intent = Intent(this, HistoryActivity::class.java )
+        startActivity(intent)
+    }
+    fun switchToList(view: View){
+        val intent = Intent(this, ListActivity::class.java )
         startActivity(intent)
     }
 }
