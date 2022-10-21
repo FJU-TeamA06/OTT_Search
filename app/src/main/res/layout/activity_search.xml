@@ -45,6 +45,20 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.023" />
 
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:contentDescription="選擇"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.075"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_Name"
+            app:layout_constraintVertical_bias="0.0" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
