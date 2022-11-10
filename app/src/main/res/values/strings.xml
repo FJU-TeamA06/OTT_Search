@@ -7,6 +7,7 @@
     <string name="ButtonHistoryText">紀錄</string>
     <string name="ButtonSubmitText">送出</string>
     <string name="SearchBoxHintText">請在此輸入</string>
+    <string name="a">選擇</string>
     <string-array name="OTTs">
         <item>Netflix</item>
         <item>Disney+</item>
@@ -14,4 +15,9 @@
         <item>Friday影音</item>
         <item>Google Play Movie</item>
     </string-array>
+
+    <string name="OTTSearch1">item</string>
+    <string name="text1">just test</string>
+    <string name="text2">example</string>
+    <string name="text3">happy</string>
 </resources>

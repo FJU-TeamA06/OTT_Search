@@ -7,7 +7,7 @@
     tools:context=".HitActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/OTThit"
+        android:id="@+id/OTT_hit"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
