@@ -65,18 +65,19 @@
         <FrameLayout
             android:id="@+id/f1"
             android:layout_width="match_parent"
-            android:layout_height="590dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="141dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.060000002"
             tools:context=".MainActivity">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/OTT_list1"
                 android:layout_width="match_parent"
-                android:layout_height="590dp"
+                android:layout_height="880dp"
                 android:scrollbars="vertical"
                 app:layoutManager="LinearLayoutManager" />
 
