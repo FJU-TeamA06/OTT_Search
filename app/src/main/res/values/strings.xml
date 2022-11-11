@@ -15,6 +15,13 @@
         <item>Friday影音</item>
         <item>Google Play Movie</item>
     </string-array>
+    <string-array name="HIT">
+        <item>Netflix</item>
+        <item>Disney+</item>
+        <item>動畫瘋</item>
+        <item>Friday影音</item>
+        <item>Google Play Movie</item>
+    </string-array>
 
     <string name="OTTSearch1">item</string>
     <string name="text1">just test</string>
