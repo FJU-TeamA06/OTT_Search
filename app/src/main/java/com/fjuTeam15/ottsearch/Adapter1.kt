@@ -1,6 +1,9 @@
 package com.fjuTeam15.ottsearch
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,8 +44,22 @@ class Adapter1(
         val item = dataset[position]
         holder.textView.text = context.resources.getString(item.stringResourceId)
         holder.imageView.setImageResource(item.imageResourceId)
+        holder.itemView.setOnClickListener()
+        {
+            val TAG = "Adapter1"
+            val pos = holder.layoutPosition//點擊元件的順位
+            Log.d(TAG, "Testing")
+            Log.d(TAG, pos.toString())
+            if(pos==0)//導向網頁程式碼
+            {
+                var url="https://google.com.tw"
+                val webIntent: Intent = Uri.parse(url).let { webpage ->
+                    Intent(Intent.ACTION_VIEW, webpage)
+                }
+                holder.itemView.context.startActivity(webIntent)
+            }
+        }
     }
-
     /**
      * Return the size of your dataset (invoked by the layout manager)
      */
