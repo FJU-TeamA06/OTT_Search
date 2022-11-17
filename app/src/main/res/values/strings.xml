@@ -9,6 +9,7 @@
     <string name="SearchBoxHintText">請在此輸入</string>
     <string name="a">選擇</string>
     <string-array name="OTTs">
+        <item>ALL</item>
         <item>Netflix</item>
         <item>Disney+</item>
         <item>動畫瘋</item>
@@ -24,7 +25,7 @@
     </string-array>
 
     <string name="OTTSearch1">item</string>
-    <string name="text1">just test</string>
-    <string name="text2">example</string>
-    <string name="text3">happy</string>
+    <string name="text1">Netflix</string>
+    <string name="text2">Disney+</string>
+    <string name="text3">動畫瘋</string>
 </resources>
