@@ -1,6 +1,8 @@
 package com.fjuTeam15.ottsearch
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
@@ -27,5 +29,9 @@ class SearchActivity : AppCompatActivity() {
         // in content do not change the layout size of the RecyclerView
         recyclerView.setHasFixedSize(true)
 
+    }
+    fun switchToSend(view: View){
+        val intent = Intent(this, SendActivity::class.java )
+        startActivity(intent)
     }
 }
