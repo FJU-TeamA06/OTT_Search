@@ -10,7 +10,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#F6F5F0"
+        android:backgroundTint="#79BFC8"
+        android:foregroundTint="#00BCD4">
 
         <TextView
             android:id="@+id/textViewTitle"
@@ -30,7 +33,7 @@
             android:id="@+id/buttonSearch"
             android:layout_width="250dp"
             android:layout_height="70dp"
-            android:backgroundTint="#3F51B5"
+            android:backgroundTint="#4253B5"
             android:backgroundTintMode="screen"
             android:onClick="switchToSearch"
             android:text="@string/ButtonSearchText"
@@ -46,7 +49,7 @@
             android:id="@+id/buttonHit"
             android:layout_width="250dp"
             android:layout_height="70dp"
-            android:backgroundTint="#3F51B5"
+            android:backgroundTint="#4253B5"
             android:backgroundTintMode="screen"
             android:onClick="switchToHit"
             android:text="@string/ButtonHitText"
@@ -62,7 +65,7 @@
             android:id="@+id/buttonMyList"
             android:layout_width="250dp"
             android:layout_height="70dp"
-            android:backgroundTint="#3F51B5"
+            android:backgroundTint="#4253B5"
             android:backgroundTintMode="screen"
             android:onClick="switchToList"
             android:text="@string/ButtonMyListText"
@@ -78,7 +81,7 @@
             android:id="@+id/buttonHistory"
             android:layout_width="250dp"
             android:layout_height="70dp"
-            android:backgroundTint="#3F51B5"
+            android:backgroundTint="#4253B5"
             android:backgroundTintMode="screen"
             android:onClick="switchToHistory"
             android:text="@string/ButtonHistoryText"
@@ -103,7 +106,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/vsearch" />
+            app:srcCompat="@drawable/img_2" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
