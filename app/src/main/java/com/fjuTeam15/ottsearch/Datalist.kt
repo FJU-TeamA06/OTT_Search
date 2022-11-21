@@ -14,8 +14,8 @@ class Datalist() {
             Item(R.string.text1, R.drawable.img),
             Item(R.string.text2, R.drawable.img_1),
             Item(R.string.text3, R.drawable.pos2),
-            Item(R.string.text4, R.drawable.pos2),
-            Item(R.string.text5, R.drawable.pos2)
+            Item(R.string.text4, R.drawable.pos3),
+            Item(R.string.text5, R.drawable.pos4)
         )
     }
 }
