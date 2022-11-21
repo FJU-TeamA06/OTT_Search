@@ -14,26 +14,27 @@
 
         <TextView
             android:id="@+id/textViewTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="446dp"
+            android:layout_height="100dp"
             android:text="@string/TitleText"
-            android:textSize="34sp"
+            android:textAlignment="center"
+            android:textSize="75sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/buttonSearch"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.6" />
+            app:layout_constraintVertical_bias="0.586" />
 
         <Button
             android:id="@+id/buttonSearch"
-            android:layout_width="137dp"
-            android:layout_height="49dp"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
             android:backgroundTint="#3F51B5"
             android:backgroundTintMode="screen"
             android:onClick="switchToSearch"
             android:text="@string/ButtonSearchText"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,12 +44,13 @@
 
         <Button
             android:id="@+id/buttonHit"
-            android:layout_width="137dp"
-            android:layout_height="49dp"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
             android:backgroundTint="#3F51B5"
             android:backgroundTintMode="screen"
             android:onClick="switchToHit"
             android:text="@string/ButtonHitText"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,12 +60,13 @@
 
         <Button
             android:id="@+id/buttonMyList"
-            android:layout_width="137dp"
-            android:layout_height="49dp"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
             android:backgroundTint="#3F51B5"
             android:backgroundTintMode="screen"
             android:onClick="switchToList"
             android:text="@string/ButtonMyListText"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -73,12 +76,13 @@
 
         <Button
             android:id="@+id/buttonHistory"
-            android:layout_width="137dp"
-            android:layout_height="49dp"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
             android:backgroundTint="#3F51B5"
             android:backgroundTintMode="screen"
             android:onClick="switchToHistory"
             android:text="@string/ButtonHistoryText"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
