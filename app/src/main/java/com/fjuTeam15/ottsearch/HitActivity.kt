@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import androidx.recyclerview.widget.RecyclerView
 
 class HitActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,5 +14,14 @@ class HitActivity : AppCompatActivity() {
         val spinner1 = findViewById<Spinner>(R.id.spinnerHIT)
         val adapter = ArrayAdapter.createFromResource(this, R.array.HIT, android.R.layout.simple_spinner_dropdown_item)
         spinner1.adapter = adapter
+
+        val myDataset2 = Datalist2().hitList()
+
+        val recyclerView = findViewById<RecyclerView>(R.id.rr1)
+        recyclerView.adapter = Adapter2(this, myDataset2)
+
+        // Use this setting to improve performance if you know that changes
+        // in content do not change the layout size of the RecyclerView
+        recyclerView.setHasFixedSize(true)
     }
 }

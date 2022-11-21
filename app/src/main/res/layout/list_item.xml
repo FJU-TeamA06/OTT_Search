@@ -12,7 +12,7 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/item_title"
+        android:id="@+id/text10"
         android:layout_width="match_parent"
         android:layout_height="114dp"
         android:padding="16dp"

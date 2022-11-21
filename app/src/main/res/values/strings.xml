@@ -31,4 +31,16 @@
     <string name="text3">動畫瘋</string>
     <string name="text4">Friday影音</string>
     <string name="text5">Google Play Movie</string>
+
+    <string name="hit1">熱門排行1</string>
+    <string name="hit2">熱門排行2</string>
+    <string name="hit3">熱門排行3</string>
+    <string name="hit4">熱門排行4</string>
+    <string name="hit5">熱門排行5</string>
+    <string name="hit6">熱門排行6</string>
+    <string name="hit7">熱門排行7</string>
+    <string name="hit8">熱門排行8</string>
+    <string name="hit9">熱門排行9</string>
+    <string name="hit10">熱門排行10</string>
+
 </resources>
