@@ -22,7 +22,7 @@ class SearchActivity : AppCompatActivity() {
         // Initialize data.
         val myDataset = Datalist().itemList()
 
-        val recyclerView = findViewById<RecyclerView>(R.id.OTT_list1)
+        val recyclerView = findViewById<RecyclerView>(R.id.OTT_list2)
         recyclerView.adapter = Adapter1(this, myDataset)
 
         // Use this setting to improve performance if you know that changes
