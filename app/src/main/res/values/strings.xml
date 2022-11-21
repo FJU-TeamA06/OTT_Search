@@ -31,4 +31,19 @@
     <string name="text3">動畫瘋</string>
     <string name="text4">Friday影音</string>
     <string name="text5">Google Play Movie</string>
+
+
+    <string-array name="hiSTORY">
+
+    <string name="History1">搜尋紀錄片單1</string>
+    <string name="History2">搜尋紀錄片單2</string>
+    <string name="History3">搜尋紀錄片單3</string>
+    <string name="History4">搜尋紀錄片單4</string>
+    <string name="History5">搜尋紀錄片單5</string>
+    <string name="History6">搜尋紀錄片單6</string>
+    <string name="History7">搜尋紀錄片單7</string>
+    <string name="History8">搜尋紀錄片單8</string>
+
+
+    </string-array>
 </resources>
