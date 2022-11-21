@@ -74,6 +74,23 @@ class Adapter1(
                 }
                 holder.itemView.context.startActivity(webIntent)
             }
+            else if(pos==3)
+            {
+                var url="https://video.friday.tw/"
+                val webIntent: Intent = Uri.parse(url).let { webpage ->
+                    Intent(Intent.ACTION_VIEW, webpage)
+                }
+                holder.itemView.context.startActivity(webIntent)
+            }
+            else if(pos==4)
+            {
+                var url="https://play.google.com/store/movies?hl=zh_TW&gl=US"
+                val webIntent: Intent = Uri.parse(url).let { webpage ->
+                    Intent(Intent.ACTION_VIEW, webpage)
+                }
+                holder.itemView.context.startActivity(webIntent)
+            }
+
         }
     }
     /**
