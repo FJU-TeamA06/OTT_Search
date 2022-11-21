@@ -11,9 +11,11 @@ class Datalist() {
 
     fun itemList(): MutableList<Item> {
         return mutableListOf<Item>(
-            Item(R.string.text1, R.drawable.abyssinian),
-            Item(R.string.text2, R.drawable.ac),
-            Item(R.string.text3, R.drawable.cs)
+            Item(R.string.text1, R.drawable.img),
+            Item(R.string.text2, R.drawable.img_1),
+            Item(R.string.text3, R.drawable.pos2),
+            Item(R.string.text4, R.drawable.pos2),
+            Item(R.string.text5, R.drawable.pos2)
         )
     }
 }

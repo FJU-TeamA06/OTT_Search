@@ -52,7 +52,23 @@ class Adapter1(
             Log.d(TAG, pos.toString())
             if(pos==0)//導向網頁程式碼
             {
-                var url="https://google.com.tw"
+                var url="https://www.netflix.com/tw/"
+                val webIntent: Intent = Uri.parse(url).let { webpage ->
+                    Intent(Intent.ACTION_VIEW, webpage)
+                }
+                holder.itemView.context.startActivity(webIntent)
+            }
+            else if(pos==1)
+            {
+                var url="https://www.disneyplus.com/zh-tw"
+                val webIntent: Intent = Uri.parse(url).let { webpage ->
+                    Intent(Intent.ACTION_VIEW, webpage)
+                }
+                holder.itemView.context.startActivity(webIntent)
+            }
+            else if(pos==2)
+            {
+                var url="https://ani.gamer.com.tw/"
                 val webIntent: Intent = Uri.parse(url).let { webpage ->
                     Intent(Intent.ACTION_VIEW, webpage)
                 }
