@@ -8,6 +8,7 @@
     <string name="ButtonSubmitText">送出</string>
     <string name="SearchBoxHintText">請在此輸入</string>
     <string name="a">選擇</string>
+    <string name="vsearch">V-SEARCH</string>
     <string-array name="OTTs">
         <item>ALL</item>
         <item>Netflix</item>

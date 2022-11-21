@@ -14,17 +14,17 @@
 
         <TextView
             android:id="@+id/textViewTitle"
-            android:layout_width="446dp"
-            android:layout_height="100dp"
-            android:text="@string/TitleText"
+            android:layout_width="376dp"
+            android:layout_height="121dp"
+            android:text="@string/vsearch"
             android:textAlignment="center"
-            android:textSize="75sp"
+            android:textSize="70sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/buttonSearch"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.586" />
+            app:layout_constraintVertical_bias="0.824" />
 
         <Button
             android:id="@+id/buttonSearch"
@@ -89,6 +89,21 @@
             app:layout_constraintTop_toBottomOf="@+id/buttonMyList"
             app:layout_constraintVertical_bias="0.18"
             tools:ignore="UsingOnClickInXml" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="159dp"
+            android:layout_height="141dp"
+            android:layout_marginStart="293dp"
+            android:layout_marginTop="193dp"
+            android:layout_marginEnd="297dp"
+            android:layout_marginBottom="43dp"
+            android:contentDescription="@string/vsearch"
+            app:layout_constraintBottom_toTopOf="@+id/textViewTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/vsearch" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
