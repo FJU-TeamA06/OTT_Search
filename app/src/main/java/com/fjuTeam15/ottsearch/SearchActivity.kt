@@ -1,6 +1,7 @@
 package com.fjuTeam15.ottsearch
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.*
@@ -62,11 +63,20 @@ class SearchActivity : AppCompatActivity() {
         val intent = Intent(this, SendActivity::class.java)
         startActivity(intent)
          */
-        Toast.makeText(getApplicationContext(), //Context
-            "This is my message", // Message to display
-            Toast.LENGTH_SHORT // Duration of the message, another possible value is Toast.LENGTH_LONG
-        ).show(); //Finally Show the toast
-        jsonParse()
+        val editText:EditText = findViewById(R.id.et_Name)
+        val keyword=editText.text
+        if (TextUtils.isEmpty(keyword)) {
+            Toast.makeText(getApplicationContext(), //Context
+                "搜尋不得為空", // Message to display
+                Toast.LENGTH_SHORT // Duration of the message, another possible value is Toast.LENGTH_LONG
+            ).show(); //Finally Show the toast
+        }
+        else
+        {
+            jsonParse()
+        }
+
+
 
     }
     private fun jsonParse() {
