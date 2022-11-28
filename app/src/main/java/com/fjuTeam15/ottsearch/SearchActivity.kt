@@ -110,6 +110,13 @@ class SearchActivity : AppCompatActivity() {
                 dialog.dismiss()
 
             }
+            if(listData.isEmpty())
+            {
+                Toast.makeText(getApplicationContext(), //Context
+                    "似乎沒有抓到資料呢，呵.jpg", // Message to display
+                    Toast.LENGTH_SHORT // Duration of the message, another possible value is Toast.LENGTH_LONG
+                ).show(); //Finally Show the toast
+            }
             dialog.dismiss()
         } catch (e: JSONException) {
             e.printStackTrace()
