@@ -3,98 +3,77 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/searchLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="1.0"
     tools:context=".SearchActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/searchLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <EditText
+
+        android:id="@+id/et_Name"
+        android:layout_width="360dp"
+        android:layout_height="68dp"
+
+        android:hint="@string/SearchBoxHintText"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#616161"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:context=".SearchActivity">
+        app:layout_constraintVertical_bias="0.023" />
 
-        <EditText
+    <Button
+        android:id="@+id/btn_Show"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/button_blue"
+        android:backgroundTintMode="screen"
+        android:onClick="switchToSend"
+        android:text="@string/ButtonSubmitText"
+        android:textSize="24sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.029"
+        tools:ignore="UsingOnClickInXml" />
 
-            android:id="@+id/et_Name"
-            android:layout_width="360dp"
-            android:layout_height="68dp"
+    <Spinner
+        android:id="@+id/spinnerOTTs"
+        android:layout_width="222dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="11dp"
+        android:contentDescription="@string/a"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_Name"
+        app:layout_constraintVertical_bias="0.009" />
 
-            android:hint="@string/SearchBoxHintText"
-            android:importantForAutofill="no"
-            android:inputType="text"
-            android:minHeight="48dp"
-            android:textColorHint="#616161"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.045"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.023" />
-
-        <Button
-            android:id="@+id/btn_Show"
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:backgroundTint="@color/button_blue"
-            android:backgroundTintMode="screen"
-            android:onClick="switchToSend"
-            android:text="@string/ButtonSubmitText"
-            android:textSize="24sp"
-            app:cornerRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.946"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.029"
-            tools:ignore="UsingOnClickInXml" />
-
-        <Spinner
-            android:id="@+id/spinnerOTTs"
-            android:layout_width="222dp"
-            android:layout_height="62dp"
-            android:layout_marginTop="11dp"
-            android:contentDescription="@string/a"
-            android:minHeight="48dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.076"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_Name"
-            app:layout_constraintVertical_bias="0.009" />
-
-        <FrameLayout
-            android:id="@+id/f2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="200dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.060000002"
-            tools:context=".MainActivity">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/OTT_list2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/background_blue"
-                android:scrollbars="vertical"
-                app:layoutManager="LinearLayoutManager" />
-
-
-        </FrameLayout>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ListView
+        android:id="@+id/userlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

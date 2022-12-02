@@ -28,12 +28,12 @@ class Datalist2() {
         return mutableListOf<Item2>(
             Item2(R.string.hit1),
             Item2(R.string.hit2),
-            Item2(R.string.hit3 ),
+            Item2(R.string.hit3),
             Item2(R.string.hit4),
             Item2(R.string.hit5),
             Item2(R.string.hit6),
             Item2(R.string.hit7),
-            Item2(R.string.hit8 ),
+            Item2(R.string.hit8),
             Item2(R.string.hit9),
             Item2(R.string.hit10),
         )
