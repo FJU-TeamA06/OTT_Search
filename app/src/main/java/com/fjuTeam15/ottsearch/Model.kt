@@ -1,5 +1,7 @@
 package com.fjuTeam15.ottsearch
 
+import java.net.URL
+
 public class Model{
     lateinit var title:String
     lateinit var platform:String

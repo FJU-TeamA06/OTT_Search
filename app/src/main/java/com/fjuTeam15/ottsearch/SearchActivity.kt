@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.util.LogPrinter
+import java.net.URL
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
@@ -19,16 +20,13 @@ import okhttp3.*
 import android.util.Log.d as logD
 
 
-
 class SearchActivity : AppCompatActivity() {
-
 
     lateinit var listView_details: ListView
 
     private lateinit var dialog: AlertDialog
     private var requestQueue: RequestQueue? = null
     private val ACTIVITY_TAG = "LogJSON"
-
 
     var arrayList_details:ArrayList<Model> = ArrayList();
     //OkHttpClient creates connection pool between client and server
@@ -51,7 +49,9 @@ class SearchActivity : AppCompatActivity() {
 
             }
         }
+
     }
+
     fun switchToSend(view: View) {
 
         val editText:EditText = findViewById(R.id.et_Name)
@@ -64,6 +64,7 @@ class SearchActivity : AppCompatActivity() {
         }
         else
         {
+
             val builder: AlertDialog.Builder = AlertDialog.Builder(this)
             builder.setCancelable(false) // if you want user to wait for some process to finish,
             builder.setView(R.layout.layout_loading_dialog)
@@ -73,9 +74,14 @@ class SearchActivity : AppCompatActivity() {
             //jsonParse()
             //listOf(logD(ACTIVITY_TAG, jsonParse().toString()))
             listView_details = findViewById<ListView>(R.id.userlist) as ListView
+            initializedata()
             jsonParse()
         }
 
+    }
+    private fun initializedata() {
+        arrayList_details = arrayListOf()
+        listView_details.adapter = Adapter3(this,arrayList_details)
     }
 
     private fun jsonParse() {
