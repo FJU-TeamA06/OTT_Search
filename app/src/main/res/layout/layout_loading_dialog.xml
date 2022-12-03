@@ -13,5 +13,5 @@
         android:layout_height="match_parent"
         android:layout_weight="4"
         android:gravity="center"
-        android:text="JSON載入中..." />
+        android:text="搜尋中..." />
 </LinearLayout>
