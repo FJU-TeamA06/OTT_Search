@@ -1,14 +1,18 @@
 package com.fjuTeam15.ottsearch
 
+import android.content.Context
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.util.LogPrinter
 import java.net.URL
 import android.view.View
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.getSystemService
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -49,11 +53,21 @@ class SearchActivity : AppCompatActivity() {
 
             }
         }
-
+        val editText:EditText = findViewById(R.id.et_Name)
+        editText.setOnEditorActionListener { view, actionId, event ->
+            //判断 actionId
+            if (actionId == EditorInfo.IME_ACTION_SEND) {
+                //do something...
+                switchToSend(view)
+                return@setOnEditorActionListener true
+            }
+            return@setOnEditorActionListener false
+        }
     }
 
     fun switchToSend(view: View) {
-
+        val imm = this.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
         val editText:EditText = findViewById(R.id.et_Name)
         val keyword=editText.text
         if (TextUtils.isEmpty(keyword)) {
@@ -83,7 +97,7 @@ class SearchActivity : AppCompatActivity() {
         arrayList_details = arrayListOf()
         listView_details.adapter = Adapter3(this,arrayList_details)
     }
-
+    
     private fun jsonParse() {
         dialog.show()
         val editText:EditText = findViewById(R.id.et_Name)

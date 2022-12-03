@@ -22,6 +22,7 @@
 
         android:hint="@string/SearchBoxHintText"
         android:importantForAutofill="no"
+        android:imeOptions="actionSend"
         android:inputType="text"
         android:minHeight="48dp"
         android:textColorHint="#616161"
