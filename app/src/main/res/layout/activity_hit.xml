@@ -7,24 +7,24 @@
     android:background="@color/background_blue"
     tools:context=".HitActivity">
 
-    <Spinner
-        android:id="@+id/spinnerHIT"
-        android:layout_width="228dp"
-        android:layout_height="83dp"
-        android:layout_marginTop="11dp"
-        android:contentDescription="@string/a"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Hit_introduce"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.027"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.004" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

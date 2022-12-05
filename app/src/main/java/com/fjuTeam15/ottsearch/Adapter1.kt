@@ -91,6 +91,48 @@ class Adapter1(
                 holder.itemView.context.startActivity(webIntent)
             }
 
+            else if(pos==5)
+            {
+                var url="https://www.linetv.tw/"
+                val webIntent: Intent = Uri.parse(url).let { webpage ->
+                    Intent(Intent.ACTION_VIEW, webpage)
+                }
+                holder.itemView.context.startActivity(webIntent)
+            }
+            else if(pos==6)
+            {
+                var url="https://kktv.me/titleList/ranking"
+                val webIntent: Intent = Uri.parse(url).let { webpage ->
+                    Intent(Intent.ACTION_VIEW, webpage)
+                }
+                holder.itemView.context.startActivity(webIntent)
+            }
+            else if(pos==7)
+            {
+                var url="https://www.bilibili.com/v/popular/rank/bangumi"
+                val webIntent: Intent = Uri.parse(url).let { webpage ->
+                    Intent(Intent.ACTION_VIEW, webpage)
+                }
+                holder.itemView.context.startActivity(webIntent)
+            }
+            else if(pos==8)
+            {
+                var url="https://www.primevideo.com/"
+                val webIntent: Intent = Uri.parse(url).let { webpage ->
+                    Intent(Intent.ACTION_VIEW, webpage)
+                }
+                holder.itemView.context.startActivity(webIntent)
+            }
+            else if(pos==9)
+            {
+                var url="https://www.iq.com/?lang=zh_tw"
+                val webIntent: Intent = Uri.parse(url).let { webpage ->
+                    Intent(Intent.ACTION_VIEW, webpage)
+                }
+                holder.itemView.context.startActivity(webIntent)
+            }
+
+
         }
     }
     /**

@@ -15,7 +15,12 @@ class Datalist() {
             Item(R.string.text2, R.drawable.img_1),
             Item(R.string.text3, R.drawable.pos2),
             Item(R.string.text4, R.drawable.pos3),
-            Item(R.string.text5, R.drawable.pos4)
+            Item(R.string.text5, R.drawable.pos4),
+            Item(R.string.text6, R.drawable.ilinetv),
+            Item(R.string.text7, R.drawable.ikktv),
+            Item(R.string.text8, R.drawable.ibilib),
+            Item(R.string.text9, R.drawable.iamazon1),
+            Item(R.string.text14, R.drawable.iq)
         )
     }
 }

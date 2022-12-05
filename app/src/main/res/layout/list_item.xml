@@ -4,27 +4,27 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp">
 
-<LinearLayout
-    android:id="@+id/l1"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
-
-    <TextView
-        android:id="@+id/text10"
+    <LinearLayout
+        android:id="@+id/l1"
         android:layout_width="match_parent"
-        android:layout_height="114dp"
-        android:padding="16dp"
-        android:textAppearance="?attr/textAppearanceHeadline6"
-        android:textSize="20sp" />
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/item_image"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:importantForAccessibility="no"
-        android:scaleType="centerCrop" />
+        <TextView
+            android:id="@+id/text10"
+            android:layout_width="286dp"
+            android:layout_height="179dp"
+            android:padding="16dp"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textSize="24sp" />
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/item_image"
+            android:layout_width="469dp"
+            android:layout_height="272dp"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop" />
+
+    </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -9,6 +9,7 @@
     <string name="SearchBoxHintText">請在此輸入</string>
     <string name="a">選擇</string>
     <string name="vsearch">V-SEARCH</string>
+
     <string-array name="OTTs">
         <item>ALL</item>
         <item>Netflix</item>
@@ -17,12 +18,21 @@
         <item>Friday影音</item>
         <item>Google Play Movie</item>
     </string-array>
+
     <string-array name="HIT">
         <item>Netflix</item>
         <item>Disney+</item>
         <item>動畫瘋</item>
         <item>Friday影音</item>
+        <item>Line TV</item>
+        <item>KKTV</item>
+        <item>BiliBili</item>
         <item>Google Play Movie</item>
+        <item>Amazon Prime Video</item>
+        <item>iTunes</item>
+        <item>Gimy 劇迷</item>
+        <item>楓林網</item>
+        <item>Zee5(印度平台)</item>
     </string-array>
 
     <string name="OTTSearch1">item</string>
@@ -31,6 +41,17 @@
     <string name="text3">動畫瘋</string>
     <string name="text4">Friday影音</string>
     <string name="text5">Google Play Movie</string>
+    <string name="text6">Line TV</string>
+    <string name="text7">KKTV</string>
+    <string name="text8">BiliBili</string>
+    <string name="text9">Amazon Prime Video</string>
+    <string name="text10">iTunes</string>
+    <string name="text11">Gimy 劇迷</string>
+    <string name="text12">楓林網</string>
+    <string name="text13">Zee5(印度平台)</string>
+    <string name="text14">愛奇藝</string>
+
+    <string name="Hit_introduce">各平台熱門排行榜</string>
 
     <string name="hit1">熱門排行1</string>
     <string name="hit2">熱門排行2</string>
