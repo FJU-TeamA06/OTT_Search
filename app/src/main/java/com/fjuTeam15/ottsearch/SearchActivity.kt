@@ -1,13 +1,19 @@
 package com.fjuTeam15.ottsearch
 
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.EditText
+import android.widget.ListView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.DefaultRetryPolicy
@@ -15,10 +21,8 @@ import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import okhttp3.OkHttpClient
 import org.json.JSONException
 import android.util.Log.d as logD
-
 
 class SearchActivity : AppCompatActivity() {
 
@@ -28,27 +32,14 @@ class SearchActivity : AppCompatActivity() {
     private var requestQueue: RequestQueue? = null
     private val ACTIVITY_TAG = "LogJSON"
 
-    var arrayList_details:ArrayList<Model> = ArrayList();
-    //OkHttpClient creates connection pool between client and server
-    val client = OkHttpClient()
+    var arrayList_details:ArrayList<Model> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
         title = "查詢"
-        val spinner1 = findViewById<Spinner>(R.id.spinnerOTTs)
-        val adapter = ArrayAdapter.createFromResource(this, R.array.OTTs, android.R.layout.simple_spinner_dropdown_item)
-        spinner1.adapter = adapter
 
-        spinner1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                //Toast.makeText(this@SearchActivity, spinner1.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show()
-            } // to close the onItemSelected
 
-            override fun onNothingSelected(parent: AdapterView<*>) {
-
-            }
-        }
         val editText:EditText = findViewById(R.id.et_Name)
         editText.setOnEditorActionListener { view, actionId, event ->
             //判断 actionId
@@ -70,26 +61,52 @@ class SearchActivity : AppCompatActivity() {
             Toast.makeText(getApplicationContext(), //Context
                 "搜尋不得為空", // Message to display
                 Toast.LENGTH_SHORT // Duration of the message, another possible value is Toast.LENGTH_LONG
-            ).show(); //Finally Show the toast
+            ).show() //Finally Show the toast
         }
         else
         {
-
-            val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-            builder.setCancelable(false) // if you want user to wait for some process to finish,
-            builder.setView(R.layout.layout_loading_dialog)
-            dialog = builder.create()
-            requestQueue = Volley.newRequestQueue(this)
-
-            //jsonParse()
-            //listOf(logD(ACTIVITY_TAG, jsonParse().toString()))
-            listView_details = findViewById<ListView>(R.id.userlist) as ListView
-            listView_details.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id ->
-                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(arrayList_details.get(position).url))
-                startActivity(browserIntent)
+            val DEBUG_TAG = "NetworkStatusExample"
+            val connMgr = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            var isWifiConn: Boolean = false
+            var isMobileConn: Boolean = false
+            connMgr.allNetworks.forEach { network ->
+                connMgr.getNetworkInfo(network).apply {
+                    if (this?.type?.equals(ConnectivityManager.TYPE_WIFI) == true) {
+                        isWifiConn = isWifiConn or isConnected
+                    }
+                    if (this?.type?.equals(ConnectivityManager.TYPE_MOBILE) == true) {
+                        isMobileConn = isMobileConn or isConnected
+                    }
+                }
             }
-            initializedata()
-            jsonParse()
+            Log.d(DEBUG_TAG, "Wifi connected: $isWifiConn")
+            Log.d(DEBUG_TAG, "Mobile connected: $isMobileConn")
+            if(isWifiConn or isMobileConn)
+            {
+                val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+                builder.setCancelable(false) // if you want user to wait for some process to finish,
+                builder.setView(R.layout.layout_loading_dialog)
+                dialog = builder.create()
+                requestQueue = Volley.newRequestQueue(this)
+
+                //jsonParse()
+                //listOf(logD(ACTIVITY_TAG, jsonParse().toString()))
+                listView_details = findViewById<ListView>(R.id.userlist) as ListView
+                listView_details.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id ->
+                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(arrayList_details.get(position).url))
+                    startActivity(browserIntent)
+                }
+                initializedata()
+                jsonParse()
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(), //Context
+                    "沒有網際網路連線", // Message to display
+                    Toast.LENGTH_SHORT // Duration of the message, another possible value is Toast.LENGTH_LONG
+                ).show() //Finally Show the toast
+            }
+
         }
 
     }
@@ -114,7 +131,7 @@ class SearchActivity : AppCompatActivity() {
 
             for (i in 0 until jsonArray.length()) {
                 val DataJson = jsonArray.getJSONObject(i)
-                var model:Model= Model();
+                val model = Model()
                 model.title=DataJson.getString("Title")
                 model.platform=DataJson.getString("Platform")
                 model.url=DataJson.getString("URL")
@@ -140,16 +157,16 @@ class SearchActivity : AppCompatActivity() {
                 Toast.makeText(getApplicationContext(), //Context
                     "似乎沒有抓到資料呢，呵.jpg", // Message to display
                     Toast.LENGTH_SHORT // Duration of the message, another possible value is Toast.LENGTH_LONG
-                ).show(); //Finally Show the toast
+                ).show() //Finally Show the toast
             }
             dialog.dismiss()
         } catch (e: JSONException) {
             e.printStackTrace()
-
+            dialog.dismiss()
             Toast.makeText(getApplicationContext(), //Context
                 "ERROR", // Message to display
                 Toast.LENGTH_SHORT // Duration of the message, another possible value is Toast.LENGTH_LONG
-            ).show(); //Finally Show the toast
+            ).show() //Finally Show the toast
             dialog.dismiss()
         }
         }, {  })
