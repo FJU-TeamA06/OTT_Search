@@ -52,7 +52,7 @@ class Adapter1(
             Log.d(TAG, pos.toString())
             if(pos==0)//導向網頁程式碼
             {
-                var url="https://www.netflix.com/tw/"
+                var url="https://top10.netflix.com/"
                 val webIntent: Intent = Uri.parse(url).let { webpage ->
                     Intent(Intent.ACTION_VIEW, webpage)
                 }
@@ -60,7 +60,7 @@ class Adapter1(
             }
             else if(pos==1)
             {
-                var url="https://www.disneyplus.com/zh-tw"
+                var url="https://disney.com.tw/disneyplus_latestlist"
                 val webIntent: Intent = Uri.parse(url).let { webpage ->
                     Intent(Intent.ACTION_VIEW, webpage)
                 }
@@ -68,7 +68,7 @@ class Adapter1(
             }
             else if(pos==2)
             {
-                var url="https://ani.gamer.com.tw/"
+                var url="https://ani.gamer.com.tw/animeList.php?c=All&sort=2"
                 val webIntent: Intent = Uri.parse(url).let { webpage ->
                     Intent(Intent.ACTION_VIEW, webpage)
                 }
@@ -76,7 +76,7 @@ class Adapter1(
             }
             else if(pos==3)
             {
-                var url="https://video.friday.tw/"
+                var url="https://video.friday.tw/ranking"
                 val webIntent: Intent = Uri.parse(url).let { webpage ->
                     Intent(Intent.ACTION_VIEW, webpage)
                 }
@@ -84,7 +84,7 @@ class Adapter1(
             }
             else if(pos==4)
             {
-                var url="https://play.google.com/store/movies?hl=zh_TW&gl=US"
+                var url="https://play.google.com/store/movies?hl=zh_TW"
                 val webIntent: Intent = Uri.parse(url).let { webpage ->
                     Intent(Intent.ACTION_VIEW, webpage)
                 }
