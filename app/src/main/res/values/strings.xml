@@ -64,8 +64,8 @@
     <string name="hit9">熱門排行9</string>
     <string name="hit10">熱門排行10</string>
     <string name="aboutText">關於</string>
-    <string name="aboutContent">這個APP由 15 組開發，\n是一個 OTT (over-the-top) 影音查詢APP。\n如果您發現任何無效的連結，\n或是沒有您要的搜尋結果，\n請發送電子郵件給我們，\n電子郵件地址為\nandyching168@gmail.com。\n感謝您使用我們的APP。</string>
-    <string name="explainContent">按下搜尋\n能查詢您想觀看的影片所提供的平台\n您可以選擇平台後點擊連結，直接連至影片網頁進行觀看。\n按下熱門\n能讓您選擇需要的平台提供推薦的熱門影片。</string>
-    <string name="producer">製作者如下：\n409261093 林政宏\n409261110 陳品璇\n409261122 陳亮瑜\n409261172 荊冠華</string>
+    <string name="aboutContent">這個APP由 15 組開發，\n是一個 OTT (over-the-top) 影音查詢APP。\n如果您發現任何無效的連結，\n或是沒有您要的搜尋結果，\n請透過底下的"問題反饋"，\n發送email給我們。\n感謝您使用我們的APP。</string>
+    <string name="explainContent">\"搜尋\"\n能查詢您想觀看的影片所提供的平台\n您可以選擇平台後點擊連結，直接連至影片網頁進行觀看。\n(建議以中文且無空白字詞為關鍵字)\n\"熱門\"\n能讓您選擇需要的平台提供推薦的熱門影片。</string>
+    <string name="dev">如下：\n409261093 林政宏\n409261110 陳品璇\n409261122 陳亮瑜\n409261172 荊冠華</string>
 
 </resources>
