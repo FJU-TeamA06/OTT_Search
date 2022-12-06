@@ -59,41 +59,24 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonSearch"
-            app:layout_constraintVertical_bias="0.10"
+            app:layout_constraintVertical_bias="0.120000005"
             tools:ignore="UsingOnClickInXml" />
 
         <Button
-            android:id="@+id/buttonMyList"
+            android:id="@+id/buttonAbout"
             android:layout_width="250dp"
             android:layout_height="70dp"
             android:backgroundTint="@color/button_blue"
             android:backgroundTintMode="screen"
-            android:onClick="switchToList"
-            android:text="@string/ButtonMyListText"
+            android:onClick="switchToAbout"
+            android:text="@string/aboutText"
             android:textSize="24sp"
             app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonHit"
-            app:layout_constraintVertical_bias="0.13"
-            tools:ignore="UsingOnClickInXml" />
-
-        <Button
-            android:id="@+id/buttonHistory"
-            android:layout_width="250dp"
-            android:layout_height="70dp"
-            android:backgroundTint="@color/button_blue"
-            android:backgroundTintMode="screen"
-            android:onClick="switchToHistory"
-            android:text="@string/ButtonHistoryText"
-            android:textSize="24sp"
-            app:cornerRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonMyList"
-            app:layout_constraintVertical_bias="0.18"
+            app:layout_constraintVertical_bias="0.17000002"
             tools:ignore="UsingOnClickInXml" />
 
         <ImageView
@@ -109,7 +92,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/img_2" />
+            app:srcCompat="@drawable/logo" />
 
 
 

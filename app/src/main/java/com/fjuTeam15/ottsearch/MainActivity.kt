@@ -22,12 +22,9 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, HitActivity::class.java )
         startActivity(intent)
     }
-    fun switchToHistory(view: View){
-        val intent = Intent(this, HistoryActivity::class.java )
+    fun switchToAbout(view: View){
+        val intent = Intent(this, AboutActivity::class.java )
         startActivity(intent)
     }
-    fun switchToList(view: View){
-        val intent = Intent(this, ListActivity::class.java )
-        startActivity(intent)
-    }
+
 }
