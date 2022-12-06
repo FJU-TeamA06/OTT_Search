@@ -42,7 +42,7 @@ class SearchActivity : AppCompatActivity() {
 
         spinner1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                Toast.makeText(this@SearchActivity, spinner1.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this@SearchActivity, spinner1.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show()
             } // to close the onItemSelected
 
             override fun onNothingSelected(parent: AdapterView<*>) {
