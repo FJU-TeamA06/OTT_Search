@@ -9,11 +9,11 @@
 
     <TextView
         android:id="@+id/textViewAboutContent"
-        android:layout_width="635dp"
-        android:layout_height="416dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:autoLink="all"
         android:text="@string/aboutContent"
-        android:textSize="34sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -36,12 +36,12 @@
 
     <TextView
         android:id="@+id/textViewCredit"
-        android:layout_width="651dp"
-        android:layout_height="261dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/rounded_text"
-        android:text="409261172 荊冠華   409261093 林政宏\n"
+        android:text="409261172 荊冠華\n409261093 林政宏\n"
         android:textAlignment="center"
-        android:textSize="34sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
