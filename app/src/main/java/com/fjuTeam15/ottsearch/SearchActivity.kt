@@ -1,26 +1,22 @@
 package com.fjuTeam15.ottsearch
 
-import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
-import android.util.LogPrinter
-import java.net.URL
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.getSystemService
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
 import com.android.volley.RequestQueue
-import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import okhttp3.OkHttpClient
 import org.json.JSONException
-import okhttp3.*
 import android.util.Log.d as logD
 
 
@@ -88,6 +84,10 @@ class SearchActivity : AppCompatActivity() {
             //jsonParse()
             //listOf(logD(ACTIVITY_TAG, jsonParse().toString()))
             listView_details = findViewById<ListView>(R.id.userlist) as ListView
+            listView_details.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id ->
+                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(arrayList_details.get(position).url))
+                startActivity(browserIntent)
+            }
             initializedata()
             jsonParse()
         }

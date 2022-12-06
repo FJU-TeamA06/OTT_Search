@@ -1,6 +1,8 @@
 package com.fjuTeam15.ottsearch
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +14,6 @@ class Adapter3(context: Context,arrayListDetails:ArrayList<Model>) : BaseAdapter
 
     private val layoutInflater: LayoutInflater
     private val arrayListDetails:ArrayList<Model>
-
     init {
         this.layoutInflater = LayoutInflater.from(context)
         this.arrayListDetails=arrayListDetails
@@ -30,7 +31,7 @@ class Adapter3(context: Context,arrayListDetails:ArrayList<Model>) : BaseAdapter
         return position.toLong()
     }
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View? {
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View?  {
         val view: View?
         val listRowHolder: ListRowHolder
         if (convertView == null) {
@@ -45,8 +46,10 @@ class Adapter3(context: Context,arrayListDetails:ArrayList<Model>) : BaseAdapter
         listRowHolder.tvid.text = arrayListDetails.get(position).title
         listRowHolder.tvplatform.text = arrayListDetails.get(position).platform
         listRowHolder.tvurl.text = arrayListDetails.get(position).url
+        
         return view
     }
+
 }
 
 private class ListRowHolder(row: View?) {
