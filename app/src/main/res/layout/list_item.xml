@@ -21,8 +21,9 @@
 
         <ImageView
             android:id="@+id/item_image"
-            android:layout_width="469dp"
-            android:layout_height="272dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cropToPadding="false"
             android:importantForAccessibility="no"
             android:scaleType="centerCrop" />
 
