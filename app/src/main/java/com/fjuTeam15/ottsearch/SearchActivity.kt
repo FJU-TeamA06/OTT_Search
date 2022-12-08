@@ -172,8 +172,8 @@ class SearchActivity : AppCompatActivity() {
         }, {  })
         request.setRetryPolicy(
             DefaultRetryPolicy(
-                20000,
-                1,
+                100000,
+                0,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
             )
         )
