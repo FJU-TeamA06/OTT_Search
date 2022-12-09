@@ -15,5 +15,5 @@
         android:gravity="center"
         android:text="搜尋中...約需10-20秒"
         android:textAlignment="center"
-        android:textSize="20sp" />
+        android:textSize="22sp" />
 </LinearLayout>

@@ -17,4 +17,6 @@
 
     <color name="button_blue">#4B5EC5</color>
     <color name="background_blue">#D0EEFA</color>
+
+    <color name="json_blue">#0F3757</color>
 </resources>

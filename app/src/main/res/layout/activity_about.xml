@@ -24,9 +24,9 @@
 
     <TextView
         android:id="@+id/textViewAboutTitle"
-        android:layout_width="155dp"
-        android:layout_height="90dp"
-        android:text="關於"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about_search"
         android:textAlignment="center"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,26 +45,32 @@
 
         <Button
             android:id="@+id/app_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="260dp"
+            android:layout_height="80dp"
             android:width="200dp"
+            android:backgroundTint="@color/button_blue"
+            android:backgroundTintMode="screen"
             android:onClick="alertAppInfo"
-            android:text="介紹"
-            android:textSize="24sp"
+            android:text="@string/about_1"
+            android:textSize="30sp"
+            app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.31" />
+            app:layout_constraintVertical_bias="0.275" />
 
         <Button
             android:id="@+id/how_to_use_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="260dp"
+            android:layout_height="80dp"
             android:width="200dp"
+            android:backgroundTint="@color/button_blue"
+            android:backgroundTintMode="screen"
             android:onClick="alertHowToUse"
-            android:text="使用說明"
-            android:textSize="24sp"
+            android:text="@string/about_2"
+            android:textSize="30sp"
+            app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -73,30 +79,37 @@
 
         <Button
             android:id="@+id/issue_email_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="260dp"
+            android:layout_height="80dp"
             android:width="200dp"
+            android:backgroundTint="@color/button_blue"
+            android:backgroundTintMode="screen"
             android:onClick="sendEmail"
-            android:text="問題反饋(email)"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/dev_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:width="200dp"
-            android:onClick="alertDev"
-            android:text="開發者"
-            android:textSize="24sp"
+            android:text="@string/about_3"
+            android:textSize="26sp"
+            app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.6" />
+            app:layout_constraintVertical_bias="0.525" />
+
+        <Button
+            android:id="@+id/dev_button"
+            android:layout_width="260dp"
+            android:layout_height="80dp"
+            android:width="200dp"
+            android:backgroundTint="@color/button_blue"
+            android:backgroundTintMode="screen"
+            android:onClick="alertDev"
+            android:text="@string/about_4"
+            android:textSize="30sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.65" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
