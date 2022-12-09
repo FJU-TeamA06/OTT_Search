@@ -10,10 +10,7 @@ import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
-import android.widget.AdapterView
-import android.widget.EditText
-import android.widget.ListView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.DefaultRetryPolicy
@@ -37,6 +34,7 @@ class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
+
         title = "查詢"
 
 
@@ -120,8 +118,17 @@ class SearchActivity : AppCompatActivity() {
         val editText:EditText = findViewById(R.id.et_Name)
         val listView:ListView = findViewById(R.id.userlist)
         val keyword=editText.text
+        var switchBtn = findViewById<Switch>(R.id.switch1)
+        var url = ""
+        if(switchBtn.isChecked)
+        {
+            url="http://140.136.151.129:8088/getkeyword?keyword=$keyword&scrape=1"
+        }
+        else
+        {
+            url="http://140.136.151.129:8088/getkeyword?keyword=$keyword&scrape=0"
+        }
 
-        val url = "http://140.136.151.129:8088/getkeyword?keyword=$keyword"
         val request = JsonObjectRequest(Request.Method.GET, url, null, {
                 response ->try {
             val jsonArray = response.getJSONArray("data")
