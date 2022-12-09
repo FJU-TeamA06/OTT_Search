@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+    android:layout_margin="8dp"
+    app:cardBackgroundColor="#EDE7F6">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -17,10 +18,10 @@
             android:autoSizeMaxTextSize="26sp"
             android:autoSizeTextType="uniform"
             android:ellipsize="none"
+            android:gravity="start"
             android:hint="@string/text9"
             android:inputType="textMultiLine|textNoSuggestions"
             android:padding="16dp"
-            android:gravity="start"
             android:textAppearance="?attr/textAppearanceHeadline6"
             android:textSize="28sp"
             app:layout_constraintBottom_toBottomOf="parent"
