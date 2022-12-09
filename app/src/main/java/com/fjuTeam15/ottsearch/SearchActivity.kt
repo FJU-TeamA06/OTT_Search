@@ -51,7 +51,7 @@ class SearchActivity : AppCompatActivity() {
                         AlertDialog.Builder(this)
                             .setMessage("\"抓取線上資料\"開啟時可能會搜尋超時\n" +
                                     "如果1分鐘以上無回應\n" +
-                                    "請殺掉進程重啟")
+                                    "請殺掉APP重啟")
                             .setTitle("警告")
                             .setPositiveButton("OK", null)
                             .show()
@@ -93,7 +93,7 @@ class SearchActivity : AppCompatActivity() {
                     AlertDialog.Builder(this)
                         .setMessage("\"抓取線上資料\"開啟時可能會搜尋超時\n" +
                                 "如果1分鐘以上無回應\n" +
-                                "請殺掉進程重啟")
+                                "請殺掉APP重啟")
                         .setTitle("警告")
                         .setPositiveButton("OK", null)
                         .show()
