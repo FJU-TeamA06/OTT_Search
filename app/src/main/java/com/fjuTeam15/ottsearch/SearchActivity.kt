@@ -48,6 +48,23 @@ class SearchActivity : AppCompatActivity() {
             }
             return@setOnEditorActionListener false
         }
+        AlertDialog.Builder(this)
+            .setMessage("請盡可能以完整片名搜尋\n否則可能會無法載入"
+                )
+            .setTitle("使用說明")
+            .setPositiveButton("OK", { _, _ ->
+                AlertDialog.Builder(this)
+                    .setMessage("\"抓取線上資料\"開啟時可能會搜尋超時\n" +
+                            "如果1分鐘以上無回應\n" +
+                            "請殺掉進程重啟")
+                    .setTitle("警告")
+                    .setPositiveButton("OK", null)
+                    .show()
+
+            })
+            .show()
+
+
     }
 
     fun switchToSend(view: View) {

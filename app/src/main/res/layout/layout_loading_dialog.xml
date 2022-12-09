@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:layout_weight="4"
         android:gravity="center"
-        android:text="搜尋中...約需10-20秒"
+        android:text="搜尋中...請稍候..."
         android:textAlignment="center"
         android:textSize="22sp" />
 </LinearLayout>
