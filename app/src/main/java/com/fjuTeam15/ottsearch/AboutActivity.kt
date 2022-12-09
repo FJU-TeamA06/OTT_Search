@@ -5,18 +5,15 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
-import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 
 class AboutActivity() : AppCompatActivity(), Parcelable {
-    constructor(parcel: Parcel) : this() {
-    }
-    private lateinit var btn: Button
+    constructor(parcel: Parcel) : this()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
@@ -25,7 +22,7 @@ class AboutActivity() : AppCompatActivity(), Parcelable {
         val string: String = getString(R.string.aboutContent)
         AlertDialog.Builder(this)
             .setMessage(string)
-            .setTitle("介紹")
+            .setTitle(getString(R.string.about_1))
             .setPositiveButton("OK", null)
             .show()
     }
@@ -33,7 +30,7 @@ class AboutActivity() : AppCompatActivity(), Parcelable {
         val string: String = getString(R.string.explainContent)
         AlertDialog.Builder(this)
             .setMessage(string)
-            .setTitle("使用說明")
+            .setTitle(getString(R.string.about_2))
             .setPositiveButton("OK", null)
             .show()
     }
@@ -45,7 +42,7 @@ class AboutActivity() : AppCompatActivity(), Parcelable {
         val string: String = getString(R.string.dev)
         AlertDialog.Builder(this)
             .setMessage(string)
-            .setTitle("開發者")
+            .setTitle(getString(R.string.about_4))
             .setPositiveButton("OK", null)
             .show()
     }

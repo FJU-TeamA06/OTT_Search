@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ButtonSearchText">Search</string>
+    <string name="text3">Gamer.com</string>
+    <string name="SearchBoxHintText">Input Here</string>
+    <string name="ButtonSubmitText">Search</string>
+    <string name="text9">Amazon Prime Video (Home)</string>
+    <string name="text4">Friday Video</string>
+    <string name="aboutText">About</string>
+    <string name="about_4">Dev</string>
+    <string name="scrapeSwitchText">Scrape Online</string>
+    <string name="about_1">Info</string>
+    <string name="about_2">How To Use</string>
+    <string name="about_3">Issue Report (Email)</string>
+    <string name="text11">GimyTV</string>
+    <string name="text12">imaple.co</string>
+    <string name="text13">Zee5</string>
+    <string name="text14">iQIYI</string>
+    <string name="Hit_introduce">OTT Hit</string>
+    <string name="OTTSearch1">item</string>
+    <string name="ButtonHitText">HIT</string>
+    <string name="aboutContent">This is an OTT (over-the-top) video search app developed by Team 15.\nIf you find any invalid links or no results for your search,\nplease send us an email through \"ISSUE REPORT\".\nThank you for using our app.</string>
+    <string name="explainContent">\"Search\"\nYou can search the platform of the video you want to watch\nYou can see the platform icon on the left.\nFind the video you want to watch and click on the link.\nClick on the link to link directly to the video page for watching.\n(Chinese keywords are recommended)\nInside\n\"Scrape Online\" for scraping data to database\nIf the data you want is not in the database\nYou can toggle the option to search\nWarning:\nThere may be a delay of 20 seconds to 100 seconds\n\"Hit\"\nallows you to select the desired platform\nProvides you with recommended top videos.</string>
+    <string name="app_info">Please search by the full title if possible,\notherwise it may not load properly.</string>
+    <string name="app_warning_title">Warning</string>
+    <string name="app_warning">When \"Scrape Online\" is enabled,\nthe search may time out.\nIf there is no response for more than 1 minute,\nplease kill the app and restart it.</string>
+    <string name="info">Info</string>
+    <string name="app_info_title">Info</string>
+
+</resources>

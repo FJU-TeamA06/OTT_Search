@@ -1,14 +1,12 @@
 <resources>
-    <string name="app_name">V-Search</string>
+    <string name="app_name" translatable="false">V-Search</string>
     <string name="ButtonSearchText">查詢</string>
-    <string name="TitleText">OTT影音查詢</string>
     <string name="ButtonHitText">熱門</string>
-    <string name="ButtonMyListText">片單</string>
-    <string name="ButtonHistoryText">紀錄</string>
+    <string name="ButtonMyListText" translatable="false">片單</string>
+    <string name="ButtonHistoryText" translatable="false">紀錄</string>
     <string name="ButtonSubmitText">送出</string>
     <string name="SearchBoxHintText">請在此輸入</string>
-    <string name="a">選擇</string>
-    <string name="vsearch">V-SEARCH</string>
+    <string name="vsearch" translatable="false">V-SEARCH</string>
 
     <string-array name="OTTs">
         <item>ALL</item>
@@ -36,43 +34,48 @@
     </string-array>
 
     <string name="OTTSearch1">item</string>
-    <string name="text1">Netflix</string>
-    <string name="text2">Disney+</string>
+    <string name="text1" translatable="false">Netflix</string>
+    <string name="text2" translatable="false">Disney+</string>
     <string name="text3">動畫瘋</string>
     <string name="text4">Friday影音</string>
-    <string name="text5">Google Play Movie</string>
-    <string name="text6">Line TV</string>
-    <string name="text7">KKTV</string>
-    <string name="text8">BiliBili</string>
-    <string name="text9">Amazon Prime Video(首頁)</string>
-    <string name="text10">iTunes</string>
+    <string name="text5" translatable="false">Google Play\nMovie</string>
+    <string name="text6" translatable="false">Line TV</string>
+    <string name="text7" translatable="false">KKTV</string>
+    <string name="text8" translatable="false">BiliBili</string>
+    <string name="text9">Amazon\nPrime Video\n(首頁)</string>
+    <string name="text10" translatable="false">iTunes</string>
     <string name="text11">Gimy 劇迷</string>
     <string name="text12">楓林網</string>
     <string name="text13">Zee5(印度平台)</string>
     <string name="text14">愛奇藝</string>
 
-    <string name="Hit_introduce">各平台熱門排行榜</string>
+    <string name="Hit_introduce">各平台\n熱門排行榜</string>
 
-    <string name="hit1">熱門排行1</string>
-    <string name="hit2">熱門排行2</string>
-    <string name="hit3">熱門排行3</string>
-    <string name="hit4">熱門排行4</string>
-    <string name="hit5">熱門排行5</string>
-    <string name="hit6">熱門排行6</string>
-    <string name="hit7">熱門排行7</string>
-    <string name="hit8">熱門排行8</string>
-    <string name="hit9">熱門排行9</string>
-    <string name="hit10">熱門排行10</string>
+    <string name="hit1" translatable="false">熱門排行1</string>
+    <string name="hit2" translatable="false">熱門排行2</string>
+    <string name="hit3" translatable="false">熱門排行3</string>
+    <string name="hit4" translatable="false">熱門排行4</string>
+    <string name="hit5" translatable="false">熱門排行5</string>
+    <string name="hit6" translatable="false">熱門排行6</string>
+    <string name="hit7" translatable="false">熱門排行7</string>
+    <string name="hit8" translatable="false">熱門排行8</string>
+    <string name="hit9" translatable="false">熱門排行9</string>
+    <string name="hit10" translatable="false">熱門排行10</string>
     <string name="aboutText">關於</string>
-    <string name="aboutContent">這個APP由 15 組開發，\n是一個 OTT (over-the-top) 影音查詢APP。\n如果您發現任何無效的連結，\n或是沒有您要的搜尋結果，\n請透過底下的"問題反饋"，\n發送email給我們。\n感謝您使用我們的APP。</string>
-    <string name="explainContent">\"搜尋\"\n能查詢您想觀看的影片所提供的平台\n您可以在左方看到平台icon，\n找到要看的影片後點擊連結，直接連至影片網頁進行觀看。\n(建議以中文為關鍵字)\n裡面的\"抓取線上資料\"為抓取DB以外的資料到DB\n如果您要的資料不在資料庫\n可以打開選項搜尋\n警告:可能會延遲20秒到100秒不等\n\"熱門\"\n能讓您選擇需要的平台提供推薦的熱門影片。</string>
-    <string name="dev">如下：\n409261093 林政宏\n409261110 陳品璇\n409261122 陳亮瑜\n409261172 荊冠華</string>
-
-    <string name="about_search">ABOUT V-SEARCH</string>
+    <string name="aboutContent">這個APP由 15 組開發，\n是一個 OTT (over-the-top) 影音查詢APP。\n如果您發現任何無效的連結，\n或是沒有您要的搜尋結果，\n請透過底下的問題反饋，\n發送email給我們。\n感謝您使用我們的APP。</string>
+    <string name="explainContent">\"搜尋\"\n能查詢您想觀看的影片所提供的平台\n您可以在左方看到平台icon，\n找到要看的影片後點擊連結，\n直接連至影片網頁進行觀看。\n(建議以中文為關鍵字)\n裡面的\"抓取線上資料\"\n為抓取DB以外的資料到DB\n如果您要的資料不在資料庫\n可以打開選項搜尋\n警告:\n可能會延遲20秒到100秒不等\n\"熱門\"\n能讓您選擇需要的平台\n提供推薦的熱門影片。</string>
+    <string name="dev" translatable="false">409261093 林政宏\n409261110 陳品璇\n409261122 陳亮瑜\n409261172 荊冠華</string>
+    <string name="app_info" >請盡可能以完整片名搜尋\n否則可能會無法載入</string>
+    <string name="app_info_title" >說明</string>
+    <string name="app_warning" >\"抓取線上資料\"開啟時可能會搜尋超時\n如果1分鐘以上無回應\n請殺掉APP重啟</string>
+    <string name="app_warning_title" >警告</string>
+    <string name="about_search" translatable="false">ABOUT V-SEARCH</string>
     <string name="about_1">介紹</string>
     <string name="about_2">使用說明</string>
     <string name="about_3">問題反饋(email)</string>
     <string name="about_4">開發者</string>
+    <string name="scrapeSwitchText">抓取線上資料</string>
+    <string name="info">說明</string>
 
 
 </resources>

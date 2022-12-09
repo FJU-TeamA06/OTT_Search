@@ -3,6 +3,7 @@ package com.fjuTeam15.ottsearch
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.net.Uri
 import android.os.Bundle
 import android.text.TextUtils
@@ -12,7 +13,10 @@ import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.EditText
+import android.widget.ListView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.DefaultRetryPolicy
@@ -20,19 +24,21 @@ import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.google.android.material.switchmaterial.SwitchMaterial
+import com.google.android.material.textfield.TextInputEditText
 import org.json.JSONException
 import android.util.Log.d as logD
 
 class SearchActivity : AppCompatActivity() {
 
 
-    lateinit var listView_details: ListView
+    private lateinit var listViewdetails: ListView
 
     private lateinit var dialog: AlertDialog
     private var requestQueue: RequestQueue? = null
-    private val ACTIVITY_TAG = "LogJSON"
+    private val activityTag = "LogJSON"
 
-    var arrayList_details:ArrayList<Model> = ArrayList()
+    private var arrayListDetails:ArrayList<Model> = ArrayList()
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu.
         val inflater = menuInflater
@@ -44,19 +50,18 @@ class SearchActivity : AppCompatActivity() {
             R.id.app_bar_info -> {
                 // Show a dialog with help information.
                 AlertDialog.Builder(this)
-                    .setMessage("請盡可能以完整片名搜尋\n否則可能會無法載入"
+                    .setMessage(getString(R.string.app_info)
                     )
-                    .setTitle("使用說明")
-                    .setPositiveButton("OK", { _, _ ->
+                    .setTitle(getString(R.string.app_info_title))
+                    .setPositiveButton("OK") { _, _ ->
                         AlertDialog.Builder(this)
-                            .setMessage("\"抓取線上資料\"開啟時可能會搜尋超時\n" +
-                                    "如果1分鐘以上無回應\n" +
-                                    "請殺掉APP重啟")
-                            .setTitle("警告")
+                            .setMessage(getString(R.string.app_warning)
+                            )
+                            .setTitle(getString(R.string.app_warning_title))
                             .setPositiveButton("OK", null)
                             .show()
 
-                    })
+                    }
                     .show()
                 return true
             }
@@ -69,13 +74,13 @@ class SearchActivity : AppCompatActivity() {
         setContentView(R.layout.activity_search)
         val toolbar:androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbarSearch)
         setSupportActionBar(toolbar)
-        title = "查詢"
+        title = getString(R.string.ButtonSearchText)
 
 
-        val editText:EditText = findViewById(R.id.et_Name)
-        editText.setOnEditorActionListener { view, actionId, event ->
+        val editText: TextInputEditText = findViewById(R.id.et_Name)
+        editText.setOnEditorActionListener { view, actionId, _ ->
             //判断 actionId
-            if (actionId == EditorInfo.IME_ACTION_SEND) {
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 //do something...
                 switchToSend(view)
                 return@setOnEditorActionListener true
@@ -86,19 +91,18 @@ class SearchActivity : AppCompatActivity() {
         if (!sharedPreferences.getBoolean("displayed_hint", false)) {
             // Show the hint.
             AlertDialog.Builder(this)
-                .setMessage("請盡可能以完整片名搜尋\n否則可能會無法載入"
+                .setMessage(getString(R.string.app_info)
                 )
-                .setTitle("使用說明")
-                .setPositiveButton("OK", { _, _ ->
+                .setTitle(getString(R.string.app_info_title))
+                .setPositiveButton("OK") { _, _ ->
                     AlertDialog.Builder(this)
-                        .setMessage("\"抓取線上資料\"開啟時可能會搜尋超時\n" +
-                                "如果1分鐘以上無回應\n" +
-                                "請殺掉APP重啟")
-                        .setTitle("警告")
+                        .setMessage(getString(R.string.app_warning)
+                        )
+                        .setTitle(getString(R.string.app_warning_title))
                         .setPositiveButton("OK", null)
                         .show()
 
-                })
+                }
                 .show()
 
             // Save the fact that the hint has been displayed.
@@ -116,29 +120,32 @@ class SearchActivity : AppCompatActivity() {
         val editText:EditText = findViewById(R.id.et_Name)
         val keyword=editText.text
         if (TextUtils.isEmpty(keyword)) {
-            Toast.makeText(getApplicationContext(), //Context
+            Toast.makeText(
+                applicationContext, //Context
                 "搜尋不得為空", // Message to display
                 Toast.LENGTH_SHORT // Duration of the message, another possible value is Toast.LENGTH_LONG
             ).show() //Finally Show the toast
         }
         else
         {
-            val DEBUG_TAG = "NetworkStatusExample"
-            val connMgr = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            var isWifiConn: Boolean = false
-            var isMobileConn: Boolean = false
-            connMgr.allNetworks.forEach { network ->
-                connMgr.getNetworkInfo(network).apply {
-                    if (this?.type?.equals(ConnectivityManager.TYPE_WIFI) == true) {
-                        isWifiConn = isWifiConn or isConnected
-                    }
-                    if (this?.type?.equals(ConnectivityManager.TYPE_MOBILE) == true) {
-                        isMobileConn = isMobileConn or isConnected
-                    }
+            val debugTag = "NetworkStatusExample"
+            var isWifiConn = false
+            var isMobileConn = false
+            val connectivityManager = getSystemService(ConnectivityManager::class.java)
+            val currentNetwork = connectivityManager.activeNetwork
+            val networkCapabilities = connectivityManager.getNetworkCapabilities(currentNetwork)
+
+            if (networkCapabilities != null) {
+                if (networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
+                    isWifiConn = true
+                }
+                if (networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
+                    isMobileConn = true
                 }
             }
-            Log.d(DEBUG_TAG, "Wifi connected: $isWifiConn")
-            Log.d(DEBUG_TAG, "Mobile connected: $isMobileConn")
+
+            Log.d(debugTag, "Wifi connected: $isWifiConn")
+            Log.d(debugTag, "Mobile connected: $isMobileConn")
             if(isWifiConn or isMobileConn)
             {
                 val builder: AlertDialog.Builder = AlertDialog.Builder(this)
@@ -149,9 +156,9 @@ class SearchActivity : AppCompatActivity() {
 
                 //jsonParse()
                 //listOf(logD(ACTIVITY_TAG, jsonParse().toString()))
-                listView_details = findViewById<ListView>(R.id.userlist) as ListView
-                listView_details.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id ->
-                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(arrayList_details.get(position).url))
+                listViewdetails = findViewById(R.id.userlist)
+                listViewdetails.setOnItemClickListener { _: AdapterView<*>, _: View, position: Int, _ ->
+                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(arrayListDetails[position].url))
                     startActivity(browserIntent)
                 }
                 initializedata()
@@ -159,7 +166,8 @@ class SearchActivity : AppCompatActivity() {
             }
             else
             {
-                Toast.makeText(getApplicationContext(), //Context
+                Toast.makeText(
+                    applicationContext, //Context
                     "沒有網際網路連線", // Message to display
                     Toast.LENGTH_SHORT // Duration of the message, another possible value is Toast.LENGTH_LONG
                 ).show() //Finally Show the toast
@@ -169,8 +177,8 @@ class SearchActivity : AppCompatActivity() {
 
     }
     private fun initializedata() {
-        arrayList_details = arrayListOf()
-        listView_details.adapter = Adapter3(this,arrayList_details)
+        arrayListDetails = arrayListOf()
+        listViewdetails.adapter = Adapter3(this,arrayListDetails)
     }
     
     private fun jsonParse() {
@@ -178,15 +186,11 @@ class SearchActivity : AppCompatActivity() {
         val editText:EditText = findViewById(R.id.et_Name)
         val listView:ListView = findViewById(R.id.userlist)
         val keyword=editText.text
-        var switchBtn = findViewById<Switch>(R.id.switch1)
-        var url = ""
-        if(switchBtn.isChecked)
-        {
-            url="http://140.136.151.129:8088/getkeyword?keyword=$keyword&scrape=1"
-        }
-        else
-        {
-            url="http://140.136.151.129:8088/getkeyword?keyword=$keyword&scrape=0"
+        val switchBtn = findViewById<SwitchMaterial>(R.id.switch1)
+        var url: String = if(switchBtn.isChecked) {
+            "http://140.136.151.129:8088/getkeyword?keyword=$keyword&scrape=1"
+        } else {
+            "http://140.136.151.129:8088/getkeyword?keyword=$keyword&scrape=0"
         }
 
         val request = JsonObjectRequest(Request.Method.GET, url, null, {
@@ -194,19 +198,17 @@ class SearchActivity : AppCompatActivity() {
             val jsonArray = response.getJSONArray("data")
             val listData = ArrayList<String>()
 
-            data class VD(val title: String, val platform: String, val URL: String)
-
             for (i in 0 until jsonArray.length()) {
-                val DataJson = jsonArray.getJSONObject(i)
+                val dataJson = jsonArray.getJSONObject(i)
                 val model = Model()
-                model.title=DataJson.getString("Title")
-                model.platform=DataJson.getString("Platform")
-                model.url=DataJson.getString("URL")
-                arrayList_details.add(model)
+                model.title=dataJson.getString("Title")
+                model.platform=dataJson.getString("Platform")
+                model.url=dataJson.getString("URL")
+                arrayListDetails.add(model)
                 //textView.append("Title: $firstName\nPlatform: $age\nURL: $mail\n---------\n")
                 listData.add(model.toString())
 
-                logD(ACTIVITY_TAG, model.title+"|"+model.platform+"|"+model.url)
+                logD(activityTag, model.title+"|"+model.platform+"|"+model.url)
                 //textView.setTextIsSelectable(true);
                 //textView.movementMethod = ScrollingMovementMethod()
                 //textView.setMovementMethod(LinkMovementMethod.getInstance());
@@ -214,14 +216,14 @@ class SearchActivity : AppCompatActivity() {
             runOnUiThread {
                 dialog.dismiss()
 
-                val obj_adapter : Adapter3
-                obj_adapter = Adapter3(applicationContext,arrayList_details)
-                listView_details.adapter=obj_adapter
+                val objAdapter : Adapter3
+                listViewdetails.adapter=Adapter3(applicationContext,arrayListDetails)
 
             }
             if(listData.isEmpty())
             {
-                Toast.makeText(getApplicationContext(), //Context
+                Toast.makeText(
+                    applicationContext, //Context
                     "似乎沒有抓到資料呢，呵.jpg", // Message to display
                     Toast.LENGTH_SHORT // Duration of the message, another possible value is Toast.LENGTH_LONG
                 ).show() //Finally Show the toast
@@ -230,19 +232,18 @@ class SearchActivity : AppCompatActivity() {
         } catch (e: JSONException) {
             e.printStackTrace()
             dialog.dismiss()
-            Toast.makeText(getApplicationContext(), //Context
+            Toast.makeText(
+                applicationContext, //Context
                 "ERROR", // Message to display
                 Toast.LENGTH_SHORT // Duration of the message, another possible value is Toast.LENGTH_LONG
             ).show() //Finally Show the toast
             dialog.dismiss()
         }
         }, {  })
-        request.setRetryPolicy(
-            DefaultRetryPolicy(
-                100000,
-                0,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
-            )
+        request.retryPolicy = DefaultRetryPolicy(
+            100000,
+            0,
+            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
         )
         requestQueue?.add(request)
     }
