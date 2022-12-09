@@ -68,4 +68,11 @@
     <string name="explainContent">\"搜尋\"\n能查詢您想觀看的影片所提供的平台\n您可以在左方看到平台icon，\n找到要看的影片後點擊連結，直接連至影片網頁進行觀看。\n(建議以中文為關鍵字)\n\"熱門\"\n能讓您選擇需要的平台提供推薦的熱門影片。</string>
     <string name="dev">如下：\n409261093 林政宏\n409261110 陳品璇\n409261122 陳亮瑜\n409261172 荊冠華</string>
 
+    <string name="about_search">ABOUT V-SEARCH</string>
+    <string name="about_1">介紹</string>
+    <string name="about_2">使用說明</string>
+    <string name="about_3">問題反饋(email)</string>
+    <string name="about_4">開發者</string>
+
+
 </resources>
