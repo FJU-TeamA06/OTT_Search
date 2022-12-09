@@ -7,6 +7,8 @@ import android.net.Uri
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
@@ -23,6 +25,7 @@ import android.util.Log.d as logD
 
 class SearchActivity : AppCompatActivity() {
 
+
     lateinit var listView_details: ListView
 
     private lateinit var dialog: AlertDialog
@@ -30,11 +33,42 @@ class SearchActivity : AppCompatActivity() {
     private val ACTIVITY_TAG = "LogJSON"
 
     var arrayList_details:ArrayList<Model> = ArrayList()
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu.
+        val inflater = menuInflater
+        inflater.inflate(R.menu.searchviewmenu, menu)
+        return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.app_bar_info -> {
+                // Show a dialog with help information.
+                AlertDialog.Builder(this)
+                    .setMessage("請盡可能以完整片名搜尋\n否則可能會無法載入"
+                    )
+                    .setTitle("使用說明")
+                    .setPositiveButton("OK", { _, _ ->
+                        AlertDialog.Builder(this)
+                            .setMessage("\"抓取線上資料\"開啟時可能會搜尋超時\n" +
+                                    "如果1分鐘以上無回應\n" +
+                                    "請殺掉進程重啟")
+                            .setTitle("警告")
+                            .setPositiveButton("OK", null)
+                            .show()
 
+                    })
+                    .show()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
+        val sharedPreferences = getSharedPreferences("prefs", Context.MODE_PRIVATE)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
-
+        val toolbar:androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbarSearch)
+        setSupportActionBar(toolbar)
         title = "查詢"
 
 
@@ -48,21 +82,30 @@ class SearchActivity : AppCompatActivity() {
             }
             return@setOnEditorActionListener false
         }
-        AlertDialog.Builder(this)
-            .setMessage("請盡可能以完整片名搜尋\n否則可能會無法載入"
+        //第一次打開顯示提示，之後都不會顯示
+        if (!sharedPreferences.getBoolean("displayed_hint", false)) {
+            // Show the hint.
+            AlertDialog.Builder(this)
+                .setMessage("請盡可能以完整片名搜尋\n否則可能會無法載入"
                 )
-            .setTitle("使用說明")
-            .setPositiveButton("OK", { _, _ ->
-                AlertDialog.Builder(this)
-                    .setMessage("\"抓取線上資料\"開啟時可能會搜尋超時\n" +
-                            "如果1分鐘以上無回應\n" +
-                            "請殺掉進程重啟")
-                    .setTitle("警告")
-                    .setPositiveButton("OK", null)
-                    .show()
+                .setTitle("使用說明")
+                .setPositiveButton("OK", { _, _ ->
+                    AlertDialog.Builder(this)
+                        .setMessage("\"抓取線上資料\"開啟時可能會搜尋超時\n" +
+                                "如果1分鐘以上無回應\n" +
+                                "請殺掉進程重啟")
+                        .setTitle("警告")
+                        .setPositiveButton("OK", null)
+                        .show()
 
-            })
-            .show()
+                })
+                .show()
+
+            // Save the fact that the hint has been displayed.
+            val editor = sharedPreferences.edit()
+            editor.putBoolean("displayed_hint", true)
+            editor.apply()
+        }
 
 
     }
