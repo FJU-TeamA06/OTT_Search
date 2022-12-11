@@ -75,6 +75,7 @@ class SearchActivity : AppCompatActivity() {
         val toolbar:androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbarSearch)
         setSupportActionBar(toolbar)
         title = getString(R.string.ButtonSearchText)
+        setTheme(R.style.Theme_OTTSearch);
 
 
         val editText: TextInputEditText = findViewById(R.id.et_Name)

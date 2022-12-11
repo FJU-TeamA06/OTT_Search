@@ -12,7 +12,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 
 class Adapter3(context: Context,arrayListDetails:ArrayList<Model>) : BaseAdapter(){
-
     private val layoutInflater: LayoutInflater
     private val arrayListDetails:ArrayList<Model>
     init {

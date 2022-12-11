@@ -7,6 +7,7 @@ import com.fjuTeam15.ottsearch.R.id.OTT_list2
 
 class SendActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_OTTSearch);
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_send)
         title = "result"
