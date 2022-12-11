@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primaryColor">#8e24aa</color>
+    <color name="primaryColor">#7136C3</color>
     <color name="primaryLightColor">#c158dc</color>
     <color name="primaryDarkColor">#5c007a</color>
     <color name="secondaryColor">#7e57c2</color>
@@ -26,7 +26,7 @@
     <color name="blue">#0288D1</color>
     <color name="blue_dark">#005B9F</color>
     <color name="blue_light">#81D4FA</color>
-
+    <color name="button_search_color">#7136C3</color>
     <color name="button_blue">#4B5EC5</color>
     <color name="background_blue">#D0EEFA</color>
     <color name="background_color">#111111</color>

@@ -117,7 +117,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_weight="0.2"
-            android:backgroundTint="?attr/colorPrimary"
+            android:backgroundTint="@color/button_search_color"
             android:backgroundTintMode="screen"
             android:onClick="switchToSend"
             android:text="@string/ButtonSubmitText"
