@@ -67,7 +67,7 @@
     <string name="dev" translatable="false">409261093 林政宏\n409261110 陳品璇\n409261122 陳亮瑜\n409261172 荊冠華</string>
     <string name="app_info" >請盡可能以完整片名搜尋\n否則可能會無法載入</string>
     <string name="app_info_title" >說明</string>
-    <string name="app_warning" >\"抓取線上資料\"開啟時可能會搜尋超時\n如果1分鐘以上無回應\n請殺掉APP重啟</string>
+    <string name="app_warning" >當您選擇「抓取線上資料」時，\n系統可能會花費較長的時間搜尋資料。\n如果等待了一分鐘以上仍然沒有回應，\n建議您關閉這個應用程式並重新啟動。</string>
     <string name="app_warning_title" >警告</string>
     <string name="about_search" translatable="false">ABOUT V-SEARCH</string>
     <string name="about_1">介紹</string>
