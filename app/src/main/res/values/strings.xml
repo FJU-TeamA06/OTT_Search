@@ -69,6 +69,8 @@
     <string name="app_info_title" >說明</string>
     <string name="app_warning" >當您選擇「抓取線上資料」時，\n系統可能會花費較長的時間搜尋資料。\n如果等待了一分鐘以上仍然沒有回應，\n建議您關閉這個應用程式並重新啟動。</string>
     <string name="app_warning_title" >警告</string>
+    <string name="app_timeout_error" >錯誤:網路連線問題或連線超時\n你可以關掉\"抓取線上資料\"然後再試一次</string>
+    <string name="no_result" >似乎沒有抓到資料呢，呵.jpg</string>
     <string name="about_search" translatable="false">ABOUT V-SEARCH</string>
     <string name="about_1">介紹</string>
     <string name="about_2">使用說明</string>
@@ -76,6 +78,9 @@
     <string name="about_4">開發者</string>
     <string name="scrapeSwitchText">抓取線上資料</string>
     <string name="info">說明</string>
+    <string name="yes_button">好</string>
+    <string name="cancel_button">取消</string>
+    <string name="app_send_email_window">要打開email程式來回報嗎?</string>
 
 
 </resources>

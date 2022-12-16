@@ -26,5 +26,10 @@
     <string name="app_warning">When \"Scrape Online\" is enabled,\nthe search may time out.\nIf there is no response for more than 1 minute,\nplease kill the app and restart it.</string>
     <string name="info">Info</string>
     <string name="app_info_title">Info</string>
+    <string name="app_timeout_error">Error: Network problem or connection timeout\nYou can turn off \"Scrape Online\" and try again.</string>
+    <string name="no_result">No Result, \"Heh\"</string>
+    <string name="yes_button">Yes</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="app_send_email_window">Do you want open email app to report?</string>
 
 </resources>

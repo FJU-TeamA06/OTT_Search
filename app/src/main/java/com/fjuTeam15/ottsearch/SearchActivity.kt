@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -17,6 +18,7 @@ import android.widget.AdapterView
 import android.widget.EditText
 import android.widget.ListView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.DefaultRetryPolicy
@@ -24,9 +26,12 @@ import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.android.volley.TimeoutError;
+import com.android.volley.VolleyError;
 import com.google.android.material.switchmaterial.SwitchMaterial
 import com.google.android.material.textfield.TextInputEditText
 import org.json.JSONException
+import java.net.SocketTimeoutException
 import android.util.Log.d as logD
 
 class SearchActivity : AppCompatActivity() {
@@ -68,6 +73,7 @@ class SearchActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         val sharedPreferences = getSharedPreferences("prefs", Context.MODE_PRIVATE)
         super.onCreate(savedInstanceState)
@@ -115,6 +121,7 @@ class SearchActivity : AppCompatActivity() {
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     fun switchToSend(view: View) {
         val imm = this.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(view.windowToken, 0)
@@ -195,7 +202,7 @@ class SearchActivity : AppCompatActivity() {
         }
 
         val request = JsonObjectRequest(Request.Method.GET, url, null, {
-                response ->try {
+                response ->
             val jsonArray = response.getJSONArray("data")
             val listData = ArrayList<String>()
 
@@ -225,24 +232,23 @@ class SearchActivity : AppCompatActivity() {
             {
                 Toast.makeText(
                     applicationContext, //Context
-                    "似乎沒有抓到資料呢，呵.jpg", // Message to display
+                    getString(R.string.no_result), // Message to display
                     Toast.LENGTH_SHORT // Duration of the message, another possible value is Toast.LENGTH_LONG
                 ).show() //Finally Show the toast
             }
             dialog.dismiss()
-        } catch (e: JSONException) {
-            e.printStackTrace()
-            dialog.dismiss()
-            Toast.makeText(
-                applicationContext, //Context
-                "ERROR", // Message to display
-                Toast.LENGTH_SHORT // Duration of the message, another possible value is Toast.LENGTH_LONG
-            ).show() //Finally Show the toast
-            dialog.dismiss()
-        }
-        }, {  })
+        },{
+                error ->
+                dialog.dismiss()
+                Toast.makeText(
+                    applicationContext, //Context
+                    getString(R.string.app_timeout_error), // Message to display
+                    Toast.LENGTH_SHORT // Duration of the message, another possible value is Toast.LENGTH_LONG
+                ).show() //Finally Show the toast
+            // 網路請求失敗或超時時的程式碼
+        })
         request.retryPolicy = DefaultRetryPolicy(
-            100000,
+            60000,
             0,
             DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
         )

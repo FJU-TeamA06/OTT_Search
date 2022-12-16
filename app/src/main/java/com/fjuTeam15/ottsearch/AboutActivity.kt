@@ -35,8 +35,20 @@ class AboutActivity() : AppCompatActivity(), Parcelable {
             .show()
     }
     fun sendEmail(view: View) {
-        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:andyching168@gmail.com"))
-        startActivity(browserIntent)
+        AlertDialog.Builder(this)
+            .setMessage(getString(R.string.app_send_email_window))
+            .setTitle(getString(R.string.about_3))
+            .setPositiveButton(getString(R.string.yes_button)) { _, _ ->
+                val browserIntent =
+                    Intent(Intent.ACTION_VIEW, Uri.parse("mailto:andyching168@gmail.com"))
+                startActivity(browserIntent)
+            }
+            .setNegativeButton(getString(R.string.cancel_button), null)
+            .show()
+
+
+
+
     }
     fun alertDev(view: View){
         val string: String = getString(R.string.dev)
