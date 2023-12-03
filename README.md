@@ -1,6 +1,6 @@
 # OTT_Search App
 OTT_Search Introduction
-Android Studio with Database APP  team Project
+Android Studio with Database APP __ Team Project
 
 ## 工具
 
@@ -8,8 +8,10 @@ GitHub, Android Studio, json, SQL, python 爬蟲
 
 ## OTT影音查詢APP
 
-主要負責前端部分，使用 Android Studio 以 Kotlin 書寫，json python 爬蟲
+### 前端
+使用 Android Studio 以 Kotlin 書寫，用json和後端做連接 
 
+### 後端
 - 先用搜尋爬蟲取得抓到的結果
 - 再把這些結果重新製作成一個格式簡單的JSON
 - 一次送交給SQL那邊做處理
@@ -19,6 +21,9 @@ python3 main.py [搜尋字詞]
 ```
 
 ### 特色
+
+- 搜尋功能
+- 排行榜
 - 深色模式
 
 <img src="Vsearch.jpg" alt="Description" style="width: 200px; height: 300px;">
